@@ -12,8 +12,8 @@ class Neural_Network(object):
         #Weights (Parameters)
         self.W1 = np.random.randn(self.inputLayerSize, \
                 self.hiddenLayerSize)
-        self.W2 = np.random.randn(self.inputLayerSize, \
-                self.hiddenLayerSize)
+        self.W2 = np.random.randn(self.hiddenLayerSize, \
+                self.outputLayerSize)
 
 
 
@@ -21,7 +21,7 @@ class Neural_Network(object):
         #Propagate inputs through network
         self.z2 = np.dot(X, self.W1)
         self.a2 = self.sigmoid(self.z2)
-        self.z3 = np.dot(self.a2, selfW2)
+        self.z3 = np.dot(self.a2, self.W2)
         yHat = self.sigmoid(self.z3)
         return yHat
 
@@ -29,5 +29,6 @@ class Neural_Network(object):
     def sigmoid(self, z):
         #apply sigmoid activation function to scalar, vector, or
         return 1/(1+np.exp(-z))
+
 
 
