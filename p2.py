@@ -21,6 +21,7 @@ class Neural_Network(object):
         #Propagate inputs through network
         self.z2 = np.dot(X, self.W1)
         self.a2 = self.sigmoid(self.z2)
+        print(self.a2)
         self.z3 = np.dot(self.a2, self.W2)
         yHat = self.sigmoid(self.z3)
         return yHat
